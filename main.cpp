@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "cpp/basicT.cpp"
 
 int main()
@@ -6,6 +7,22 @@ int main()
     std::cout << liam::max(1, 3) << std::endl;
     std::cout << liam::max2(1.1, 3) << std::endl;
     std::cout << liam::max3(1.1, 3) << std::endl;
+    std::cout << test::max(1.1, 3) << std::endl;
+
+    std::vector<int> vec { 1, 2, 9, 45, 22 };
+    std::vector<int> vec2 { 1, 2, 3, 4, 5 };
+    std::vector<float> vec3 { 1.3, 2, 3, 4, 5 };
+    int a{55}, b{45};
+
+    test::operation(a, b, test::add);
+    test::performFunction(vec, test::addOneVec);
+
+    t::performFunc(vec3, t::addOne);
+    for (auto& it : vec3)
+    {
+        std::cout << it << std::endl;
+    }
+
 }
 
 // decltype(*expression*) All it does is return the type of the expression
