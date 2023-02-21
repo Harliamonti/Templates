@@ -2,6 +2,7 @@
 #include <type_traits>
 #include <vector>
 #include <string>
+#include <concepts>
 
 namespace liam
 {
@@ -62,7 +63,7 @@ namespace test
 
 namespace t
 {
-    template <typename T>
+    template <typename T> requires std::floating_point<T> || std::integral<T> && (!(std::same_as<T, char>))
     void performFunc(std::vector<T> &vec, void (*func)(std::vector<T> &arg))
     {
         func(vec);
